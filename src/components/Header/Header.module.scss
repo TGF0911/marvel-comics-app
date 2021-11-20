@@ -1,0 +1,19 @@
+.container{
+  width: 100vw;
+  height: 50px;
+  background-color: #462FB3;
+  padding: 30px 150px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  a {
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+  }
+  
+}
