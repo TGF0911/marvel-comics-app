@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/dist/client/image'
-import capa from '../assets/capa_marvel.jpg'
 import styles from '../styles/Home.module.scss'
+import { CharacterCard } from '../components/CharacterCard'
 
 const Home: NextPage = () => {
   return (
@@ -15,13 +14,53 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.imageSection}>
-          {/* Aqui vai ter umas images e um texto sobre o site -> mais um carrossel  */}
+          {/* Aqui vai ter os eventos -> mais um carrossel  */}
         </div>
 
-        <div className={styles.moreCharacters}>
+
+
+        <div className={styles.cardsContainer}>
 
           <h2>Characters in more comics</h2>
+
+          <div className={styles.cardGroup} >
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+          </div>
         </div>
+        
+        <div className={styles.cardsContainer}>
+
+          <h2>Characters in more comics</h2>
+
+          <div className={styles.cardGroup} >
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+          </div>
+        </div>
+        
+        <div className={styles.cardsContainer}>
+
+          <h2>Characters in more comics</h2>
+
+          <div className={styles.cardGroup} >
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+          </div>
+        </div>
+        
         
       </main>
 

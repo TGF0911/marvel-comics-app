@@ -1,11 +1,6 @@
 .container {
   width: 100vw;
   height: 100vh;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // background-color: #f5f5f5;
 }
 
 .main {
@@ -15,8 +10,27 @@
   .imageSection{
    background-image: url('../assets/capa_marvel.jpg');
    width: 100%;
-   height: 55rem;
+   height: 49rem;
   }
+
+ .cardsContainer{
+ margin-top: 40px;
+    h2{
+      padding: 20px;
+      margin-left: 0.7rem;
+      font-size: 30px;
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1.3px;
+    }
+
+  .cardGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-top: -2rem;
+  }
+ }
  
 }
 
