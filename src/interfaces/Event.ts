@@ -2,20 +2,7 @@ import { CharacterList, IImage } from "./Character";
 import { ComicList } from "./Comic";
 import { SeriesList } from "./Series";
 
-export interface StorySummary{
-    resourceURI: string;
-    name: string;
-    type: string;
-}
-
-export interface StoryList{
-  available: number;
-  returned: number;
-  collectionURI: string;
-  items: StorySummary[];
-}
-
-export interface Story{
+export interface IEvent{
   id: number;
   title: string;
   description: string;

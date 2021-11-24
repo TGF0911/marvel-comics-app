@@ -18,6 +18,7 @@ export const Header = () => {
       <a href="">Comics</a>
       <a href="">Series</a>
       <a href="">Stories</a>
+      <a href="">Events</a>
    
     </header>
   )

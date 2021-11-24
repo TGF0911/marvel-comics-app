@@ -12,6 +12,13 @@ export interface Url{
   url: string;
 }
 
+export interface CharacterList{
+  available: number;
+  returned: number;
+  collectionURI: string;
+  items: CharacterSummary[];
+}
+
 export interface CharacterSummary{
   resourceURI: string;
   name: string;

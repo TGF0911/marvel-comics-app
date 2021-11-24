@@ -1,8 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 import { CharacterCard } from '../components/CharacterCard'
+import { ComicCard } from '../components/ComicCard'
+import { EventCard } from '../components/EventCard'
 
+
+import styles from '../styles/Home.module.scss'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -15,6 +18,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.imageSection}>
           {/* Aqui vai ter os eventos -> mais um carrossel  */}
+          <EventCard />
         </div>
 
 
@@ -35,21 +39,21 @@ const Home: NextPage = () => {
         
         <div className={styles.cardsContainer}>
 
-          <h2>Characters in more comics</h2>
+          <h2>Comics</h2>
 
           <div className={styles.cardGroup} >
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
+            <ComicCard />
+            <ComicCard />
+            <ComicCard />
+            <ComicCard />
+            <ComicCard />
+            <ComicCard />
           </div>
         </div>
         
         <div className={styles.cardsContainer}>
 
-          <h2>Characters in more comics</h2>
+          <h2>Some Series</h2>
 
           <div className={styles.cardGroup} >
             <CharacterCard />

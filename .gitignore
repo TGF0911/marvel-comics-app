@@ -9,6 +9,7 @@
 /coverage
 
 .env
+.vscode
 
 # next.js
 /.next/
