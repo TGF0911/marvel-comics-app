@@ -1,31 +1,31 @@
-import { ComicList } from "./Comic";
-import { SeriesList } from "./Series";
-import { StoryList } from "./Story";
+import { ComicList } from './Comic';
+import { SeriesList } from './Series';
+import { StoryList } from './Story';
 
-export interface IImage{
+export interface IImage {
   path: string;
   extension: string;
 }
 
-export interface Url{
+export interface Url {
   type: string;
   url: string;
 }
 
-export interface CharacterList{
+export interface CharacterList {
   available: number;
   returned: number;
   collectionURI: string;
   items: CharacterSummary[];
 }
 
-export interface CharacterSummary{
+export interface CharacterSummary {
   resourceURI: string;
   name: string;
   role: string;
 }
 
-export interface Character{
+export interface Character {
   id: number;
   name: string;
   description: string;
@@ -33,10 +33,10 @@ export interface Character{
   comics: ComicList;
   series: SeriesList;
   stories: StoryList;
-  urk: Url[];
+  url: Url[];
 }
 
-export interface CharacterDataContainer{
+export interface CharacterDataContainer {
   offset: number;
   limit: number;
   total: number;
