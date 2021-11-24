@@ -36,15 +36,27 @@ export function CardProvider({ children }: CardXContext) {
   const [events, setEvents] = useState<IEvent[]>([]);
 
   async function getCharacters() {
-    await api.get(`/characters`).then(({ data }: any) => {
-      setCharacters(data.data.results);
-    });
+    await api
+      .get(`/characters`, {
+        params: {
+          limit: 6,
+        },
+      })
+      .then(({ data }: any) => {
+        setCharacters(data.data.results);
+      });
   }
 
   async function getComics() {
-    await api.get(`/comics`).then(({ data }: any) => {
-      setComics(data.data.results);
-    });
+    await api
+      .get(`/comics`, {
+        params: {
+          limit: 6,
+        },
+      })
+      .then(({ data }: any) => {
+        setComics(data.data.results);
+      });
   }
 
   async function getComicsByCharacter(id: number) {
@@ -54,9 +66,15 @@ export function CardProvider({ children }: CardXContext) {
   }
 
   async function getStories() {
-    await api.get(`/stories`).then(({ data }: any) => {
-      setStories(data.data.results);
-    });
+    await api
+      .get(`/stories`, {
+        params: {
+          limit: 6,
+        },
+      })
+      .then(({ data }: any) => {
+        setStories(data.data.results);
+      });
   }
 
   async function getSeries() {
@@ -66,9 +84,15 @@ export function CardProvider({ children }: CardXContext) {
   }
 
   async function getEvents() {
-    await api.get(`/events`).then(({ data }: any) => {
-      setEvents(data.data.results);
-    });
+    await api
+      .get(`/events`, {
+        params: {
+          limit: 1,
+        },
+      })
+      .then(({ data }: any) => {
+        setEvents(data.data.results);
+      });
   }
 
   //https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784/standard_medium.jpg

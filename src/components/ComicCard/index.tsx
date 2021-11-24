@@ -1,23 +1,40 @@
 import Image from 'next/image';
-import {GoPlus} from 'react-icons/go'
-import comic from '../../assets/comic_test.jpg'
+import { GoPlus } from 'react-icons/go';
+import comicImg from '../../assets/comic_test.jpg';
+import { IImage } from '../../interfaces/Character';
+import { Comic } from '../../interfaces/Comic';
 import styles from './ComicCard.module.scss';
 
-export const ComicCard = () => {
+interface ComicCardProps {
+  comic: Comic;
+}
+
+export const ComicCard = ({ comic }: ComicCardProps) => {
+  function getThumbnail(thumbnail: IImage) {
+    if (thumbnail) {
+      return `${thumbnail.path}/standard_medium.${thumbnail.extension}`;
+    } else {
+      return comicImg;
+    }
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.imageSection}>
-        <Image src={comic} alt="Spider-Man"  />
+        <Image src={getThumbnail(comic.thumbnail)} alt="Spider-Man" />
       </div>
 
-      <h4>Marvel Previews (2017)</h4>
+      <h4>{comic.title}</h4>
 
       <div className={styles.description}>
-      <strong>Description</strong>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit libero dolorem nam, est, hic tempore quis aut aspernatur accusantium corrupti minima, explicabo culpa sit! Laborum vel excepturi sed dolores neque! </p>
+        <strong>Description</strong>
+        <p>{comic.description}</p>
 
-      <div className={styles.button}> <GoPlus size={16} color="#000"/> <p>detalhes</p></div>
+        <div className={styles.button}>
+          {' '}
+          <GoPlus size={16} color="#000" /> <p>detalhes</p>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};

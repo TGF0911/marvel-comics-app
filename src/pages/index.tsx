@@ -6,7 +6,6 @@ import { ComicCard } from '../components/ComicCard';
 import { EventCard } from '../components/EventCard';
 import { useCard } from '../context/CardContext';
 import { Character } from '../interfaces/Character';
-import { api, apiKey, hash, time } from '../services/api';
 
 interface HomeProps {
   characters: Character[];
@@ -14,18 +13,30 @@ interface HomeProps {
 
 import styles from '../styles/Home.module.scss';
 export default function Home() {
-  const { characters, getCharacters } = useCard();
-  // async function getCharacters() {
-  //   const res = await fetch(
-  //     `https://gateway.marvel.com/v1/public/characters?ts=${time}&apikey=${apiKey}&hash=${hash}`,
-  //   );
-  //   const json = await res.json();
-
-  //   console.log(json.data.results);
-  // }
+  const {
+    characters,
+    comics,
+    series,
+    getCharacters,
+    getComics,
+    getSeries,
+    events,
+    getEvents,
+  } = useCard();
 
   useEffect(() => {
     getCharacters();
+  }, []);
+
+  useEffect(() => {
+    getComics();
+  }, []);
+  useEffect(() => {
+    getEvents();
+  }, []);
+
+  useEffect(() => {
+    getSeries();
   }, []);
 
   return (
@@ -38,7 +49,9 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.imageSection}>
           {/* Aqui vai ter os eventos -> mais um carrossel  */}
-          <EventCard />
+          {events.map((event) => {
+            return <EventCard key={event.id} event={event} />;
+          })}
         </div>
 
         <div className={styles.cardsContainer}>
@@ -55,12 +68,9 @@ export default function Home() {
           <h2>Comics</h2>
 
           <div className={styles.cardGroup}>
-            <ComicCard />
-            <ComicCard />
-            <ComicCard />
-            <ComicCard />
-            <ComicCard />
-            <ComicCard />
+            {comics.map((comic) => {
+              return <ComicCard key={comic.id} comic={comic} />;
+            })}
           </div>
         </div>
 
