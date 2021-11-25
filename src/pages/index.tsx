@@ -28,16 +28,16 @@ export default function Home() {
     getCharacters();
   }, []);
 
-  useEffect(() => {
-    getComics();
-  }, []);
-  useEffect(() => {
-    getEvents();
-  }, []);
+  // useEffect(() => {
+  //   getComics();
+  // }, []);
+  // useEffect(() => {
+  //   getEvents();
+  // }, []);
 
-  useEffect(() => {
-    getSeries();
-  }, []);
+  // useEffect(() => {
+  //   getSeries();
+  // }, []);
 
   return (
     <div className={styles.container}>
@@ -68,9 +68,9 @@ export default function Home() {
           <h2>Comics</h2>
 
           <div className={styles.cardGroup}>
-            {comics.map((comic) => {
+            {/* {comics.map((comic) => {
               return <ComicCard key={comic.id} comic={comic} />;
-            })}
+            })} */}
           </div>
         </div>
 

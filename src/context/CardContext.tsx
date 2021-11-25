@@ -21,6 +21,7 @@ type CardContext = {
   getSeries: () => void;
   getEvents: () => void;
   getStories: () => void;
+  getComicsByCharacter: (id: string) => void;
 };
 
 const CardContext = createContext<CardContext>({} as CardContext);
@@ -59,7 +60,7 @@ export function CardProvider({ children }: CardXContext) {
       });
   }
 
-  async function getComicsByCharacter(id: number) {
+  async function getComicsByCharacter(id: string) {
     await api.get(`/characters/${id}/comics`).then(({ data }: any) => {
       setComics(data.data.results);
     });
@@ -120,6 +121,7 @@ export function CardProvider({ children }: CardXContext) {
         getStories,
         getSeries,
         getEvents,
+        getComicsByCharacter,
       }}
     >
       {children}
